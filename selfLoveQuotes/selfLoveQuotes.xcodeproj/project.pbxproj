@@ -15,7 +15,7 @@
 		59913BCD27F6158400748FED /* NeumorphicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59913BCC27F6158400748FED /* NeumorphicCard.swift */; };
 		59913BD327F61B9900748FED /* DotProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59913BD227F61B9900748FED /* DotProgressView.swift */; };
 		59913BD527F61BC500748FED /* NeumorphicAsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59913BD427F61BC500748FED /* NeumorphicAsyncButton.swift */; };
-		59D7CBF527F7093200CCAB87 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CBF427F7093200CCAB87 /* CV.swift */; };
+		59A15D022864E2400028B8A4 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A15D012864E2400028B8A4 /* QuotesViewModel.swift */; };
 		59E4FC0527FCB2D40099D9E1 /* NeumorphicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4FC0427FCB2D40099D9E1 /* NeumorphicButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		59913BCC27F6158400748FED /* NeumorphicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicCard.swift; sourceTree = "<group>"; };
 		59913BD227F61B9900748FED /* DotProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotProgressView.swift; sourceTree = "<group>"; };
 		59913BD427F61BC500748FED /* NeumorphicAsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicAsyncButton.swift; sourceTree = "<group>"; };
-		59D7CBF427F7093200CCAB87 /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
+		59A15D012864E2400028B8A4 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		59E4FC0427FCB2D40099D9E1 /* NeumorphicButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,11 +66,8 @@
 				59913BBA27F6117D00748FED /* selfLoveQuotes.swift */,
 				59913BC827F612FC00748FED /* Extensions.swift */,
 				59913BBC27F6117D00748FED /* ContentView.swift */,
-				59913BCC27F6158400748FED /* NeumorphicCard.swift */,
-				59D7CBF427F7093200CCAB87 /* CV.swift */,
-				59913BD427F61BC500748FED /* NeumorphicAsyncButton.swift */,
-				59E4FC0427FCB2D40099D9E1 /* NeumorphicButtonStyle.swift */,
-				59913BD227F61B9900748FED /* DotProgressView.swift */,
+				59D43FE1286DD3F5004ECBCC /* Components */,
+				59D43FE2286DD419004ECBCC /* View Model */,
 				59913BBE27F6117F00748FED /* Assets.xcassets */,
 				59913BC027F6117F00748FED /* Preview Content */,
 			);
@@ -83,6 +80,25 @@
 				59913BC127F6117F00748FED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59D43FE1286DD3F5004ECBCC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				59913BD427F61BC500748FED /* NeumorphicAsyncButton.swift */,
+				59E4FC0427FCB2D40099D9E1 /* NeumorphicButtonStyle.swift */,
+				59913BD227F61B9900748FED /* DotProgressView.swift */,
+				59913BCC27F6158400748FED /* NeumorphicCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		59D43FE2286DD419004ECBCC /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				59A15D012864E2400028B8A4 /* QuotesViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				59913BBD27F6117D00748FED /* ContentView.swift in Sources */,
+				59A15D022864E2400028B8A4 /* QuotesViewModel.swift in Sources */,
 				59913BD527F61BC500748FED /* NeumorphicAsyncButton.swift in Sources */,
 				59913BC927F612FC00748FED /* Extensions.swift in Sources */,
 				59913BBB27F6117D00748FED /* selfLoveQuotes.swift in Sources */,
-				59D7CBF527F7093200CCAB87 /* CV.swift in Sources */,
 				59E4FC0527FCB2D40099D9E1 /* NeumorphicButtonStyle.swift in Sources */,
 				59913BD327F61B9900748FED /* DotProgressView.swift in Sources */,
 				59913BCD27F6158400748FED /* NeumorphicCard.swift in Sources */,
@@ -297,8 +313,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,8 +343,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

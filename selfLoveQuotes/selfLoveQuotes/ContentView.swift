@@ -11,6 +11,9 @@ struct ContentView: View {
     @State private var quote: String = "You yourself, as much as anybody in the entire universe, deserve your love and affection."
     @State private var opacity: Double = 1
     
+    @StateObject private var quotesVM = QuotesViewModel()
+    @State private var index: Int = 0
+    
     var body: some View {
         VStack(spacing: 50) {
             Spacer()
@@ -24,12 +27,13 @@ struct ContentView: View {
             
             NeumorphicAsyncButton(
                 action: {
-                    try await action()
+                    try await quotesVM.randomQuoteGenerator(with: quotesVM.quotes, and: index)
+                    
                 },
                 text: "New quote",
                 icon: "quote.bubble.fill",
                 quote: $quote,
-                opacity: $opacity
+                opacity: $opacity, index: $index
                 
             )
 

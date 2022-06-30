@@ -15,7 +15,7 @@ struct NeumorphicCard: View {
         VStack(spacing: 20) {
             Text("Self-love quote")
                 .fontWeight(.semibold)
-                .font(.system(size: 40))
+                .font(.largeTitle)
                 .foregroundColor(.gray)
             Text(quote)
                 .foregroundColor(Color.gray)

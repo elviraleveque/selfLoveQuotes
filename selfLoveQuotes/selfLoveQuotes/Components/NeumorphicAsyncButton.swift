@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NeumorphicAsyncButton: View {
-    var action: () async throws -> String
+    var action: () async throws -> Int
     
     var text: String
     var icon: String
@@ -17,9 +17,12 @@ struct NeumorphicAsyncButton: View {
     @State private var isPerformingTask = false
     @State private var isCompleted = false
     
-// quote text properties
+    // quote text properties
     @Binding var quote: String
     @Binding var opacity: Double
+    @Binding var index: Int
+    
+    @StateObject private var quotesVM = QuotesViewModel()
     
     var body: some View {
         Button(
@@ -34,7 +37,8 @@ struct NeumorphicAsyncButton: View {
                 }
                 
                 Task {
-                    quote = try await action()
+                    index = try await quotesVM.randomQuoteGenerator(with: quotesVM.quotes, and: index)
+                    quote = quotesVM.quotes[index]
                     
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
                         isPerformingTask = false
@@ -45,8 +49,6 @@ struct NeumorphicAsyncButton: View {
                     withAnimation(.easeInOut(duration: 1)) {
                         opacity = 1
                     }
-                    
-                    print(quote)
                     
                     // Go back to initial state
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -80,23 +82,3 @@ struct NeumorphicAsyncButton: View {
         .disabled(isPerformingTask || isCompleted)
     }
 }
-
-// async function
-func action() async throws -> String{
-    let quotes = ["You yourself, as much as anybody in the entire universe, deserve your love and affection.",
-                  "You deserve someone who makes you feel like the otherworldly creature you are. Yourself.",
-                  "Be so completely yourself that everyone else feels safe to be themselves, too.",
-                  "Love yourself first and everything else falls into line. You really have to love yourself to get anything done in this world.",
-                  "Gonna love myself. No, I don’t need anybody else",
-                  "To love oneself is the beginning of a life-long romance.",
-                  "You have to believe in yourself when no one else does – that makes you a winner right here.",
-                  "They will try to make you unhappy, don’t let them. They will try to tell you you’re not free, don’t listen.",
-                  "A person learns how to love himself through the simple acts of loving and being loved by someone else.",
-                  "Find the love you seek, by first finding the love within yourself. Learn to rest in that place within you that is your true home."
-    ]
-    
-    let index = Int.random(in: 0..<10)
-    try await Task.sleep(nanoseconds: 3 * 1_000_000_000)  // Three seconds
-    return quotes[index]
-}
-
